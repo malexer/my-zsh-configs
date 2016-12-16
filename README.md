@@ -11,7 +11,7 @@ My ZSH configuration.
 
 # Notes on sources
 
-1. Portions of config was taken from default bash config in Ubuntu 16.04.
+1. Portions of config were taken from default bash config in Ubuntu 16.04.
 2. Some ideas were found here: [zsh-configuration-from-the-ground-up]
 
 
