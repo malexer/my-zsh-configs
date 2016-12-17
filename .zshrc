@@ -1,12 +1,29 @@
-source ~/.zsh/aliases.zsh
-source ~/.zsh/colors.zsh
-source ~/.zsh/exports.zsh
-source ~/.zsh/history.zsh
-source ~/.zsh/pretty.zsh
-
 # ZPLUG
-source ~/.zplug/init.zsh
 
+# initialize
+if [[ $OSTYPE == linux-gnu ]]; then
+    source ~/.zplug/init.zsh
+elif [[ $OSTYPE == darwin* ]]; then
+    export ZPLUG_HOME=/usr/local/opt/zplug
+    source $ZPLUG_HOME/init.zsh
+fi
+
+# useful parts of oh-my-zsh
+zplug "lib/clipboard", from:oh-my-zsh
+zplug "lib/compfix", from:oh-my-zsh
+zplug "lib/completion", from:oh-my-zsh
+zplug "lib/correction", from:oh-my-zsh
+zplug "lib/directories", from:oh-my-zsh
+zplug "lib/grep", from:oh-my-zsh
+zplug "lib/history", from:oh-my-zsh
+zplug "lib/key-bindings", from:oh-my-zsh
+zplug "lib/misc", from:oh-my-zsh
+zplug "lib/spectrum", from:oh-my-zsh
+zplug "lib/termsupport", from:oh-my-zsh
+zplug "lib/theme-and-appearance", from:oh-my-zsh
+
+# plugins
+zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
@@ -19,6 +36,7 @@ zplug "plugins/sublime", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 # zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
+# theme
 # zplug 'halfo/lambda-mod-zsh-theme', as:theme
 zplug 'denysdovhan/spaceship-zsh-theme', as:theme
 
@@ -33,9 +51,18 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
 
+
+# CUSTOM CONFIGURATIONS
+
 # fix Ctrl+U
 bindkey \^U backward-kill-line
 
 # fix Ctrl + Arrow Left/Right
 bindkey ';5D' emacs-backward-word
 bindkey ';5C' emacs-forward-word
+
+# for some reason LSCOLORS is broken by zplug on macOS
+export LSCOLORS=exfxcxdxbxexexabagacad
+
+source ~/.zsh/exports.zsh
+source ~/.zsh/history.zsh
