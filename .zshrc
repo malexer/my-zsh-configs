@@ -37,8 +37,8 @@ zplug "plugins/sudo", from:oh-my-zsh
 # zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # theme
-# zplug 'halfo/lambda-mod-zsh-theme', as:theme
-zplug 'denysdovhan/spaceship-zsh-theme', as:theme
+zplug 'S-NA/lambda-mod-zsh-theme', as:theme, use:'lambda-mod.zsh'
+# zplug 'denysdovhan/spaceship-zsh-theme', as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
