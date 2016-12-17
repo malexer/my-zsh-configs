@@ -1,12 +1,5 @@
 # ZPLUG
-
-# initialize
-if [[ $OSTYPE == linux-gnu ]]; then
-    source ~/.zplug/init.zsh
-elif [[ $OSTYPE == darwin* ]]; then
-    export ZPLUG_HOME=/usr/local/opt/zplug
-    source $ZPLUG_HOME/init.zsh
-fi
+source ~/.zplug/init.zsh
 
 # useful parts of oh-my-zsh
 zplug "lib/clipboard", from:oh-my-zsh
