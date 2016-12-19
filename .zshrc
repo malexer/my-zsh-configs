@@ -7,6 +7,7 @@ zplug "lib/compfix", from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
 zplug "lib/correction", from:oh-my-zsh
 zplug "lib/directories", from:oh-my-zsh
+zplug "lib/git", from:oh-my-zsh
 zplug "lib/grep", from:oh-my-zsh
 zplug "lib/history", from:oh-my-zsh
 zplug "lib/key-bindings", from:oh-my-zsh
@@ -57,3 +58,4 @@ bindkey \^U backward-kill-line
 export LSCOLORS=exfxcxdxbxexexabagacad
 
 source ~/.zsh/exports.zsh
+source ~/.zsh/git.zsh
