@@ -54,10 +54,6 @@ setopt no_share_history
 # fix Ctrl+U
 bindkey \^U backward-kill-line
 
-# fix Ctrl + Arrow Left/Right
-bindkey ';5D' emacs-backward-word
-bindkey ';5C' emacs-forward-word
-
 # for some reason LSCOLORS is broken by zplug on macOS
 export LSCOLORS=exfxcxdxbxexexabagacad
 
