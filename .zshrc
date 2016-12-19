@@ -27,7 +27,7 @@ zplug "plugins/python", from:oh-my-zsh
 zplug "plugins/pyenv", from:oh-my-zsh
 zplug "plugins/sublime", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
-# zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # theme
 zplug 'S-NA/lambda-mod-zsh-theme', as:theme, use:'lambda-mod.zsh'
