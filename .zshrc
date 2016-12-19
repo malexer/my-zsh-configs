@@ -31,7 +31,6 @@ zplug "plugins/sudo", from:oh-my-zsh
 
 # theme
 zplug 'S-NA/lambda-mod-zsh-theme', as:theme, use:'lambda-mod.zsh'
-# zplug 'denysdovhan/spaceship-zsh-theme', as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
