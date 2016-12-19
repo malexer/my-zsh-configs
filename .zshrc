@@ -47,6 +47,10 @@ zplug load
 
 # CUSTOM CONFIGURATIONS
 
+# history
+setopt hist_no_store
+setopt no_share_history
+
 # fix Ctrl+U
 bindkey \^U backward-kill-line
 
@@ -58,4 +62,3 @@ bindkey ';5C' emacs-forward-word
 export LSCOLORS=exfxcxdxbxexexabagacad
 
 source ~/.zsh/exports.zsh
-source ~/.zsh/history.zsh

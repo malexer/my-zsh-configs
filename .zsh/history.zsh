@@ -1,2 +1,0 @@
-setopt hist_no_store
-setopt no_share_history
