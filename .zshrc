@@ -19,6 +19,7 @@ zplug "lib/theme-and-appearance", from:oh-my-zsh
 # plugins
 zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug "plugins/colorize", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/history-substring-search", from:oh-my-zsh
@@ -57,5 +58,5 @@ bindkey \^U backward-kill-line
 # for some reason LSCOLORS is broken by zplug on macOS
 export LSCOLORS=exfxcxdxbxexexabagacad
 
+source ~/.zsh/aliases.zsh
 source ~/.zsh/exports.zsh
-source ~/.zsh/git.zsh
