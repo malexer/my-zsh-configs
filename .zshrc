@@ -64,3 +64,7 @@ source ~/.zsh/exports.zsh
 if [[ $OSTYPE == darwin* ]]; then
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
+
+if [[ -e ~/.profile ]]; then
+    source ~/.profile
+fi
