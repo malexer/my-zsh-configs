@@ -29,6 +29,7 @@ zplug "plugins/python", from:oh-my-zsh
 zplug "plugins/pyenv", from:oh-my-zsh
 zplug "plugins/sublime", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
+zplug "plugins/z", from:oh-my-zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # theme
