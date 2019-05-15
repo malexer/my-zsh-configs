@@ -1,3 +1,7 @@
+# disable zsh substitution/autocomplete with URL and backslashes
+# https://stackoverflow.com/questions/25614613/how-to-disable-zsh-substitution-autocomplete-with-url-and-backslashes
+DISABLE_MAGIC_FUNCTIONS=true
+
 # ZPLUG
 source ~/.zplug/init.zsh
 
