@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # disable zsh substitution/autocomplete with URL and backslashes
 # https://stackoverflow.com/questions/25614613/how-to-disable-zsh-substitution-autocomplete-with-url-and-backslashes
 DISABLE_MAGIC_FUNCTIONS=true
@@ -5,9 +12,10 @@ DISABLE_MAGIC_FUNCTIONS=true
 # Plugin Manager
 source ~/.zinit/bin/zinit.zsh
 
-# Load pure theme
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
+# Load theme
+# zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+# zinit light sindresorhus/pure
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # OMZ libs
 zinit wait lucid for \
@@ -69,3 +77,6 @@ fi
 if [[ -e ~/.profile ]]; then
     source ~/.profile
 fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
