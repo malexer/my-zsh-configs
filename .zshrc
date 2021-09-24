@@ -2,53 +2,50 @@
 # https://stackoverflow.com/questions/25614613/how-to-disable-zsh-substitution-autocomplete-with-url-and-backslashes
 DISABLE_MAGIC_FUNCTIONS=true
 
-# ZPLUG
-source ~/.zplug/init.zsh
+# Plugin Manager
+source ~/.zinit/bin/zinit.zsh
 
-# useful parts of oh-my-zsh
-zplug "lib/clipboard", from:oh-my-zsh
-zplug "lib/compfix", from:oh-my-zsh
-zplug "lib/completion", from:oh-my-zsh
-zplug "lib/correction", from:oh-my-zsh
-zplug "lib/directories", from:oh-my-zsh
-zplug "lib/git", from:oh-my-zsh
-zplug "lib/grep", from:oh-my-zsh
-zplug "lib/history", from:oh-my-zsh
-zplug "lib/key-bindings", from:oh-my-zsh
-zplug "lib/misc", from:oh-my-zsh
-zplug "lib/spectrum", from:oh-my-zsh
-zplug "lib/termsupport", from:oh-my-zsh
-zplug "lib/theme-and-appearance", from:oh-my-zsh
+# Load pure theme
+zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
+zinit light sindresorhus/pure
 
-# plugins
-zplug "plugins/common-aliases", from:oh-my-zsh
-zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "plugins/colorize", from:oh-my-zsh
-zplug "plugins/docker", from:oh-my-zsh
-zplug "plugins/docker-compose", from:oh-my-zsh
-zplug "plugins/history-substring-search", from:oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/pip", from:oh-my-zsh
-zplug "plugins/python", from:oh-my-zsh
-zplug "plugins/pyenv", from:oh-my-zsh
-zplug "plugins/sublime", from:oh-my-zsh
-zplug "plugins/sudo", from:oh-my-zsh
-zplug "plugins/z", from:oh-my-zsh
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+# OMZ libs
+zinit wait lucid for \
+    OMZL::functions.zsh \
+    OMZL::clipboard.zsh \
+    OMZL::compfix.zsh \
+    OMZL::completion.zsh \
+    OMZL::correction.zsh \
+    OMZL::directories.zsh \
+    OMZL::git.zsh \
+    OMZL::grep.zsh \
+    OMZL::history.zsh \
+    OMZL::key-bindings.zsh \
+    OMZL::misc.zsh \
+    OMZL::spectrum.zsh \
+    OMZL::termsupport.zsh \
+    OMZL::theme-and-appearance.zsh
 
-# theme
-zplug 'malexer/lambda-mod-zsh-theme', as:theme
+# OMZ plugins
+zinit wait lucid for \
+    OMZP::colored-man-pages \
+    OMZP::colorize \
+    OMZP::git \
+    OMZP::pip \
+    OMZP::python \
+    OMZP::sublime \
+    OMZP::sudo
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
+# Plugins
+zinit wait lucid for \
+    agkozak/zsh-z
 
-# Then, source plugins and add commands to $PATH
-zplug load
+zinit wait lucid as"completion" for \
+    OMZP::docker/_docker \
+    OMZP::docker-compose/_docker-compose
+
+zinit wait lucid atinit"zicompinit; zicdreplay" for \
+    zdharma/fast-syntax-highlighting
 
 
 # CUSTOM CONFIGURATIONS
@@ -60,10 +57,9 @@ setopt no_share_history
 # fix Ctrl+U
 bindkey \^U backward-kill-line
 
-# for some reason LSCOLORS is broken by zplug on macOS
-export LSCOLORS=exfxcxdxbxexexabagacad
+zinit wait lucid atload'source ~/.zsh/aliases.zsh' for \
+    OMZP::common-aliases
 
-source ~/.zsh/aliases.zsh
 source ~/.zsh/exports.zsh
 
 if [[ $OSTYPE == darwin* ]]; then
