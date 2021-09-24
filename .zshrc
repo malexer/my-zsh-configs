@@ -6,7 +6,7 @@ DISABLE_MAGIC_FUNCTIONS=true
 source ~/.zinit/bin/zinit.zsh
 
 # Load pure theme
-zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 
 # OMZ libs
