@@ -27,7 +27,6 @@ zinit wait lucid for \
     OMZL::directories.zsh \
     OMZL::git.zsh \
     OMZL::grep.zsh \
-    OMZL::history.zsh \
     OMZL::key-bindings.zsh \
     OMZL::misc.zsh \
     OMZL::spectrum.zsh \
@@ -59,8 +58,8 @@ zinit wait lucid atinit"zicompinit; zicdreplay" for \
 # CUSTOM CONFIGURATIONS
 
 # history
-setopt hist_no_store
-setopt no_share_history
+zinit wait lucid atload'source ~/.zsh/history.zsh' for \
+    OMZL::history.zsh
 
 # fix Ctrl+U
 bindkey \^U backward-kill-line
@@ -69,6 +68,12 @@ zinit wait lucid atload'source ~/.zsh/aliases.zsh' for \
     OMZP::common-aliases
 
 source ~/.zsh/exports.zsh
+
+# for some reason LSCOLORS is broken by zplug on macOS
+# export CLICOLOR=1
+# export LSCOLORS=exfxcxdxbxexexabagacad
+# Zsh to use the same colors as ls
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 if [[ $OSTYPE == darwin* ]]; then
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
