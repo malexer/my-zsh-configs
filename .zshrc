@@ -52,7 +52,7 @@ zinit wait lucid as"completion" for \
     OMZP::docker-compose/_docker-compose
 
 zinit wait lucid atinit"zicompinit; zicdreplay" for \
-    zdharma/fast-syntax-highlighting
+    zdharma-continuum/fast-syntax-highlighting
 
 
 # CUSTOM CONFIGURATIONS
