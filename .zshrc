@@ -10,7 +10,7 @@ fi
 DISABLE_MAGIC_FUNCTIONS=true
 
 # Plugin Manager
-source ~/.zinit/bin/zinit.zsh
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 
 # Load theme
 # zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
