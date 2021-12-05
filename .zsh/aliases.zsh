@@ -6,5 +6,5 @@ alias gsn="git status -uno"
 alias l="exa --icons --long --git --group-directories-first -F"
 
 # info
-alias wttr="curl wttr.in/Kyiv"
-alias wttr2="curl v2.wttr.in/Kyiv"
+alias weather="curl wttr.in/Kyiv"
+alias weather2="curl v2.wttr.in/Kyiv"
