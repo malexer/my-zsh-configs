@@ -41,7 +41,8 @@ zinit wait lucid for \
     OMZP::pip \
     OMZP::python \
     OMZP::sublime \
-    OMZP::sudo
+    OMZP::sudo \
+    OMZP::virtualenv
 
 # Plugins
 zinit wait lucid for \
