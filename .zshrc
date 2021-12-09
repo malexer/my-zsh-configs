@@ -55,6 +55,8 @@ zinit wait lucid as"completion" for \
 zinit wait lucid atinit"zicompinit; zicdreplay" for \
     zdharma-continuum/fast-syntax-highlighting
 
+zinit wait lucid atload'source virtualenvwrapper.sh' for \
+    OMZP::virtualenvwrapper
 
 # CUSTOM CONFIGURATIONS
 
