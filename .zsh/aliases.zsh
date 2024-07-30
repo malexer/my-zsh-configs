@@ -3,7 +3,7 @@ alias glg="git log --graph --abbrev-commit --decorate --date=relative --format=f
 alias gsn="git status -uno"
 
 # exa (ls replacement)
-alias l="exa --icons --long --git --group-directories-first -F"
+alias l="eza --icons --long --git --group-directories-first -F"
 
 # info
 alias weather="curl wttr.in/Kyiv"
